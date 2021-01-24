@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 import Canvas from './containers/canvas';
-import Sidebar from './containers/sidebar';
+import Lsidebar from './containers/l-sidebar';
+import Rsidebar from './containers/r-sidebar';
 import Logbar from './containers/logbar';
 
 const Styles = styled.div`
@@ -23,12 +24,12 @@ const Styles = styled.div`
 function App() {
   return (
     <Styles>
-      <Sidebar text="left"/>
+      <Lsidebar/>
       <div className="d-col">
         <Canvas/>
         <Logbar/>
       </div>
-      <Sidebar text="right"/>
+      <Rsidebar/>
     </Styles>
   );
 }

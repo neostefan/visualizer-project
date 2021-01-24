@@ -10,9 +10,22 @@ const Styles = styled.div`
     background-color: ${codes.background};
 `
 const Canvas = () => {
+    let canvasRef = React.useRef(null);
+    let containerRef = React.useRef(null);
+
+    React.useEffect(() => {
+        let canvas = canvasRef.current;
+        let container = containerRef.current;
+        let containerDet = container.getBoundingClientRect();
+        let context = canvas.getContext('2d');
+        console.log(containerDet);
+        canvas.width = containerDet.width;
+        canvas.height = containerDet.height;
+    }, []);
+
     return (
-        <Styles>
-            <canvas/>
+        <Styles ref={containerRef}>
+            <canvas ref={canvasRef}/>
         </Styles>
     )
 }

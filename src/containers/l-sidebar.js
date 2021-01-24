@@ -10,12 +10,17 @@ const Styles = styled.div`
     border: .5px solid ${codes.color};
 `
 
-const Sidebar = ({text}) => {
+const Lsidebar = () => {
     return (
         <Styles>
-            {text}
+            <div>
+                <select>
+                    <option>Rectangle</option>
+                    <option>None</option>
+                </select>
+            </div>
         </Styles>
     )
 }
 
-export default Sidebar;
+export default Lsidebar;
